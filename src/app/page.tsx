@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Flame, BrainCircuit, Activity } from "lucide-react";
 import Link from "next/link";
 
+import { ThemeToggle } from "@/components/theme-toggle";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden font-sans selection:bg-indigo-500/30">
@@ -20,12 +22,15 @@ export default function Home() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute top-8 left-8 flex items-center gap-2"
+          className="absolute top-8 left-8 flex items-center justify-between w-[calc(100%-4rem)]"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-            <Activity className="w-5 h-5 text-white" />
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+              <Activity className="w-5 h-5 text-white" />
+            </div>
+            <span className="font-bold text-xl tracking-tight text-white/90">Consistify<span className="text-indigo-400">.ai</span></span>
           </div>
-          <span className="font-bold text-xl tracking-tight text-white/90">Consistify<span className="text-indigo-400">.ai</span></span>
+          <ThemeToggle />
         </motion.div>
 
         {/* Hero Section */}
